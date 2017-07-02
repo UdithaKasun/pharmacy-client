@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>Digital Pulz - Phramacy</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+     <!-- Angular Parts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.6.4/angular-messages.js"></script>
+    <script src="app.js"></script>
+    <script src="excel-reader/dist/xlsx.js"></script>
+
+    <!-- Controller -->
+
+    <script src="components/update_drug/update_drug.controller.js"></script>
+    <script src="components/add_new_drug/add_new_drug.controller.js"></script>
+    <script src="components/view_current_stock/view_current_stock.controller.js"></script>
+    <script src="components/handle_drug_request/drug_request_handler.controller.js"></script>
+    <script src="components/batch_import_drugs/batch_import_drugs.controller.js"></script>
+    <script src="components/login_view/login.controller.js"></script>
+
+    <!-- Services -->
+    <script src="services/drug_service.js"></script>
+    <script src="services/drug_category_service.js"></script>
+    <script src="services/drug_dosage_service.js"></script>
+    <script src="services/drug_frequency_service.js"></script>
+    <script src="services/authentication_service.js"></script>
+    <!-- color CSS -->
+    <link href="css/colors/megna.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <link href="components/add_new_drug/add_new_drug.css" rel="stylesheet"> 
+</head>
+
+<body ng-app="pharamacy-web">
+<!-- Preloader -->
+<div ng-view>
+
+</div>
+<!-- jQuery -->
+<script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="node_modules/bootstrap/dist/js/tether.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js"></script>
+<!-- Menu Plugin JavaScript -->
+<script src="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+<!--slimscroll JavaScript -->
+<script src="js/jquery.slimscroll.js"></script>
+<!--Wave Effects -->
+<script src="js/waves.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="js/custom.min.js"></script>
+<!--Style Switcher -->
+<script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+</body>
+
+</html>

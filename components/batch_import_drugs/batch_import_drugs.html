@@ -1,0 +1,110 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Add New Drug Batch</h4>
+            </div>
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Stock Management</a></li>
+                    <li class="active">Add New Drug Batch</li>
+                </ol>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="white-box center-elements">
+                    <h3 class="box-title">Add New Drug Batch</h3>
+                    <form class="form-material form-horizontal" name="addDrugForm">
+                        <div>
+                            <div class="form-group">
+                                <label class="col-md-12" id="example-text">Drug Name</span>
+                                    </label>
+                                <div class="col-md-12">
+                                    <input type="file" id="myFile" size="50">
+                                    <input type="button" ng-click="loadFile()"/>
+                                    <div ng-messages="addDrugForm.drugname.$error" ng-if="addDrugForm.drugname.$dirty">
+                                        <div ng-message="required">This field is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Drug Category</span></label>
+                                <div class="col-md-12">
+                                    <select class="form-control" id="sel1" ng-model="drug.drug_categoryid.category_id" required>
+                                    <option value="" disabled selected>Select Drug Category</option>
+                                    <option value="{{category.category_id}}" ng-repeat="category in drugCategories">{{ category.category_name }}</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Drug Type</span></label>
+                                <div class="col-md-12">
+                                    <select class="form-control" id="sel1" ng-model="drug.drug_type.drug_typeId">
+                                    <option value="" disabled selected>Select Drug Type</option>
+                                    <option value="{{drugtype.drug_typeId}}" ng-repeat="drugtype in drugTypes">{{ drugtype.drug_type }}</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Drug Price</label>
+                                <div class="col-md-12">
+                                    <input type="text" id="example-text3" ng-model="drug.drug_price" name="drugprice" class="form-control" placeholder="Enter Drug Price" ng-pattern="/^[0-9]{1,100}$/">                                    
+                                    <div ng-messages="addDrugForm.drugprice.$error" ng-if="addDrugForm.drugprice.$dirty">
+                                        <div ng-message="required">This field is required</div>
+                                        <div ng-message="pattern">Must be a Number</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Drug Dosage</span></label>
+                                <div class="col-md-12">
+                                    <select class="form-control" id="sel1" ng-model="drug.drug_dosage.drug_dosageId" required>
+                                    <option value="" disabled selected>Select Drug Dosage</option>
+                                    <option value="{{dosage.drug_dosageId}}" ng-repeat="dosage in drugDosages">{{ dosage.drug_dosage }}</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Drug Frequency</span></label>
+                                <div class="col-md-12">
+                                    <select class="form-control" id="sel1" ng-model="drug.drug_frequency.drug_ferquencyId" required>
+                                    <option value="" disabled selected>Select Drug Frequency</option>
+                                    <option value="{{frequency.drug_ferquencyId}}" ng-repeat="frequency in drugFrequencies">{{ frequency.drug_ferquency }}</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Drug Reorder Level</label>
+                                <div class="col-md-5">
+                                    <input type="text" ng-model="drug.drug_reorderlevel" name="reorderlevel" class="form-control" ng-pattern="/^[0-9]{1,100}$/" required>                                    
+                                    <div ng-messages="addDrugForm.reorderlevel.$error" ng-if="addDrugForm.reorderlevel.$dirty">
+                                        <div ng-message="required">This field is required</div>
+                                        <div ng-message="pattern">Must be a Number</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Drug Danger Level</label>
+                                <div class="col-md-5">
+                                    <input type="text" id="example-text4" ng-model="drug.drug_dangerlevel" name="drug_dangerlevel" class="form-control" ng-pattern="/^[0-9]{1,100}$/">                                    
+                                    <div ng-messages="addDrugForm.drug_dangerlevel.$error" ng-if="addDrugForm.drug_dangerlevel.$dirty">
+                                        <div ng-message="required">This field is required</div>
+                                        <div ng-message="pattern">Must be a Number</div>
+                                    </div>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Drug Remarks </label>
+                                <div class="col-md-12">
+                                    <textarea type="text" ng-model="name" ng-model="drug.drug_remarks" class="form-control" placeholder="Enter Drug Remarks"></textarea>                                    </div>
+                            </div>
+                            <button type="submit" class="btn btn-info waves-effect waves-light m-r-10" ng-click="saveDrug()">Submit</button>
+                            <button type="submit" class="btn btn-inverse waves-effect waves-light">Clear</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

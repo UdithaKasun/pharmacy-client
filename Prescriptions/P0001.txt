@@ -1,0 +1,9 @@
+Patient Name : Mr.Nisal Kodikara
+Age          : 24
+Issued Date  : 2017/5/8
+Description  : Having mild headache throughut the day. Sour throat
+Recommended  : paracetamol 2per meal for 5days 
+	       Zetrizet 1/2per 12 hours for 5days
+	       Amoxcilin 2per 12 hours for 5days
+Issued By    : Dr.Nihal Jayaweera
+DID          : D0002		

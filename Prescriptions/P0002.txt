@@ -1,0 +1,9 @@
+Patient Name : Mr.Arun Kumar
+Age          : 27
+Issued Date  : 2017/5/10
+Description  : Sour throat. Difficult to breath. Headaches for 2 days
+Recommended  : Panadene 2per 121 hours for 5days 
+	       Zetrizet 1/2per 12 hours for 5days
+	       Amoxcilin 2per 12 hours for 5days
+Issued By    : Dr.Karan Johar
+DID          : D0004		

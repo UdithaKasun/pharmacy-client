@@ -1,0 +1,181 @@
+<div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+                <div class="top-left-part"><a class="logo" href="login.html"><b><img width="48" height="48" src="images/hospital.png" alt="home" /></b><span class="hidden-xs"><strong>Digital</strong>Pulz</span></a></div>
+                <ul class="nav navbar-top-links navbar-left hidden-xs">
+                    <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
+                </ul>
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li class="dropdown"> <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"><i class="icon-envelope"></i>
+          <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+          </a>
+                        <ul class="dropdown-menu mailbox animated bounceInDown">
+                            <li>
+                                <div class="drop-title">You have 1 notification</div>
+                            </li>
+                            <li>
+                                <div class="message-center">
+                                    <a href="#">
+                                        <div class="user-img"> <img src="images/User-48.png" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                        <div class="mail-contnet">
+                                            <h5>Asiri Medicals</h5> <span class="mail-desc">Drug Supply Completed</span> <span class="time">4:45 PM</span> </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="text-center" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-messages -->
+                    </li>
+                    <!-- /.dropdown -->
+                    <li class="right-side-toggle"> <a class="waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a></li>
+                    <!-- /.dropdown -->
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- Left navbar-header -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search hidden-sm hidden-md hidden-lg">
+                        <!-- input-group -->
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search..."> <span class="input-group-btn">
+            <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
+            </span> </div>
+                        <!-- /input-group -->
+                    </li>
+                    <li class="nav-small-cap m-t-10">--- Drug Management</li>
+                    <li> <a href="#!addDrugs" class="waves-effect"><i class="ti-dashboard p-r-10"></i> <span class="hide-menu">Add Drugs</span></a> </li>
+                    <li> <a href="#!viewDrugs" class="waves-effect"><i class="ti-heart-broken p-r-10"></i> <span class="hide-menu">View Drugs</li>
+                    <li class="nav-small-cap m-t-10">--- Supplier Management</li>
+                    <li> <a href="#!addSupplier" class="waves-effect"><i class="ti-plus p-r-10"></i> <span class="hide-menu">Add Supplier</span></a> </li>
+                    <li> <a href="#!updateSupplier" class="waves-effect"><i class="ti-pencil p-r-10"></i> <span class="hide-menu">Update Supplier</span></a> </li>
+                    <li class="nav-small-cap m-t-10">--- Stock Management</li>
+                    <li> <a href="#!viewDrugRequests" class="waves-effect"><i class="ti-user p-r-10"></i> <span class="hide-menu">View Drug Requests</span></a> </li>
+                    <li> <a href="#!viewDrugStock" class="waves-effect"><i class="ti-user p-r-10"></i> <span class="hide-menu">View Drug Stock</span></a> </li>
+                    <li> <a href="#!addDrugBatch" class="waves-effect"><i class="ti-save-alt p-r-10"></i> <span class="hide-menu">Add Drug Batch</span></a> </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Left navbar-header end -->
+        <!-- End of Navigation -->
+
+        <div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Add New Drug</h4>
+            </div>
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Drug Management</a></li>
+                    <li class="active">Add New Drug</li>
+                </ol>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="white-box center-elements">
+                    <h3 class="box-title">Drug Information</h3>
+                    <form class="form-material form-horizontal" name="addDrugForm">
+                        <div>
+                            <div class="form-group">
+                                <label class="col-md-12" id="example-text">Drug Name</span>
+                                    </label>
+                                <div class="col-md-12">
+                                    <input type="text" ng-model="drug.drug_name" name="drugname" class="form-control" placeholder="Enter Drug Name"
+                                        required>
+                                    <div ng-messages="addDrugForm.drugname.$error" ng-if="addDrugForm.drugname.$dirty">
+                                        <div ng-message="required">This field is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Drug Category</span></label>
+                                <div class="col-md-12">
+                                    <select class="form-control" id="sel1" ng-model="drug.drug_categoryid.category_id" required>
+                                    <option value="" disabled selected>Select Drug Category</option>
+                                    <option value="{{category.category_id}}" ng-repeat="category in drugCategories">{{ category.category_name }}</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Drug Type</span></label>
+                                <div class="col-md-12">
+                                    <select class="form-control" id="sel1" ng-model="drug.drug_type.drug_typeId">
+                                    <option value="" disabled selected>Select Drug Type</option>
+                                    <option value="{{drugtype.drug_typeId}}" ng-repeat="drugtype in drugTypes">{{ drugtype.drug_type }}</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Drug Price</label>
+                                <div class="col-md-12">
+                                    <input type="text" id="example-text3" ng-model="drug.drug_price" name="drugprice" class="form-control" placeholder="Enter Drug Price" ng-pattern="/^[0-9]{1,100}$/">                                    
+                                    <div ng-messages="addDrugForm.drugprice.$error" ng-if="addDrugForm.drugprice.$dirty">
+                                        <div ng-message="required">This field is required</div>
+                                        <div ng-message="pattern">Must be a Number</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Drug Dosage</span></label>
+                                <div class="col-md-12">
+                                    <select class="form-control" id="sel1" ng-model="drug.drug_dosage.drug_dosageId" required>
+                                    <option value="" disabled selected>Select Drug Dosage</option>
+                                    <option value="{{dosage.drug_dosageId}}" ng-repeat="dosage in drugDosages">{{ dosage.drug_dosage }}</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Drug Frequency</span></label>
+                                <div class="col-md-12">
+                                    <select class="form-control" id="sel1" ng-model="drug.drug_frequency.drug_ferquencyId" required>
+                                    <option value="" disabled selected>Select Drug Frequency</option>
+                                    <option value="{{frequency.drug_ferquencyId}}" ng-repeat="frequency in drugFrequencies">{{ frequency.drug_ferquency }}</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Drug Reorder Level</label>
+                                <div class="col-md-5">
+                                    <input type="text" ng-model="drug.drug_reorderlevel" name="reorderlevel" class="form-control" ng-pattern="/^[0-9]{1,100}$/" required>                                    
+                                    <div ng-messages="addDrugForm.reorderlevel.$error" ng-if="addDrugForm.reorderlevel.$dirty">
+                                        <div ng-message="required">This field is required</div>
+                                        <div ng-message="pattern">Must be a Number</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Drug Danger Level</label>
+                                <div class="col-md-5">
+                                    <input type="text" id="example-text4" ng-model="drug.drug_dangerlevel" name="drug_dangerlevel" class="form-control" ng-pattern="/^[0-9]{1,100}$/">                                    
+                                    <div ng-messages="addDrugForm.drug_dangerlevel.$error" ng-if="addDrugForm.drug_dangerlevel.$dirty">
+                                        <div ng-message="required">This field is required</div>
+                                        <div ng-message="pattern">Must be a Number</div>
+                                    </div>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Drug Remarks </label>
+                                <div class="col-md-12">
+                                    <textarea type="text" ng-model="name" ng-model="drug.drug_remarks" class="form-control" placeholder="Enter Drug Remarks"></textarea>                                    </div>
+                            </div>
+                            <button type="submit" class="btn btn-info waves-effect waves-light m-r-10" ng-click="saveDrug()">Submit</button>
+                            <button type="submit" class="btn btn-inverse waves-effect waves-light">Clear</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
